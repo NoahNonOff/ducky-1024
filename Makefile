@@ -2,6 +2,7 @@
 # date: march/26/2024
 
 SRC =	algorithm/random.c		\
+		algorithm/md5.c			\
 		main.c
 
 INCLUDE = -I ./header

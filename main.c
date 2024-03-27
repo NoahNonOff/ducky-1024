@@ -6,9 +6,12 @@
 
 int	main(int ac, char *av[]) {
 
-	(void)ac;
-	(void)av;
-	mt_srand(4678);
-	for (int i = 0; i < 100; i++)
-		printf("%u\n", mt_rand());
+	if (ac < 2)
+		return 1;
+
+	for (int i = 1; i < ac; i++) {
+		char	hash[33] = { 0 };
+		printf("%s=\"%s\"\n", av[i], md5(av[i], hash));
+	}
+	return 1;
 }
