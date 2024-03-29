@@ -22,6 +22,10 @@ u32b_t		mt_rand_r( u32b_t *mt, u16b_t *mti );
 
 ////////////////////////// hash functions //////////////////////////
 
-const char	*md5(const char * restrict raw, char *dest);
+/* dest must be at least 32 bits long */
+const char	*md5(char * restrict raw, char *dest);
+
+/* dest must be at least 64 bits long */
+// const char *sha256(char * restrict raw, char *dest);
 
 #endif /* algorithm.h */

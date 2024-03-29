@@ -1,5 +1,5 @@
 # author: BEAUFILS Noah
-# date: march/26/2024
+# date: march/27/2024
 
 SRC =	algorithm/random.c		\
 		algorithm/md5.c			\
@@ -11,12 +11,13 @@ OBJ = $(SRC:.c=.o)
 CC = cc
 RM = rm -f
 DEBUG = 
+DEFINE = -DTEST
 FLAGS = -Wall -Wextra -Werror $(DEBUG)
 
 NAME = duck
 
 %.o : %.c
-	$(CC) $(FLAGS) $(INCLUDE) -c $< -o ${<:.c=.o}
+	$(CC) $(DEFINE) $(FLAGS) $(INCLUDE) -c $< -o ${<:.c=.o}
 
 all: $(NAME)
 
@@ -31,6 +32,6 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: test all clean fclean re
 
 .SILENT:
